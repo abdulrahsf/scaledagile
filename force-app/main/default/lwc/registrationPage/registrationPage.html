@@ -1,0 +1,20 @@
+<template>
+  <lightning-card>
+    <div class="slds-m-around_medium" if:true={validRegistrationCode}>
+      <lightning-input required type="text" name="FirstName" label="First Name" onchange={handleFirstNameChange}>
+      </lightning-input>
+      <lightning-input required type="text" name="LastName" label="Last Name" onchange={handleLastNameChange}>
+      </lightning-input>
+      <lightning-input required type="email" name="Email" label="Email" onchange={handleEmailChange}></lightning-input>
+
+      <div class="slds-m-top_small slds-m-bottom_medium">
+        <lightning-button variant="brand" label="Save" title="Primary action" onclick={handleClick}>
+
+        </lightning-button>
+      </div>
+    </div>
+    <div class="slds-m-around_medium" if:false={validRegistrationCode}>
+      <span class="error">Invalid Registration code.</span>
+    </div>
+  </lightning-card>
+</template>
